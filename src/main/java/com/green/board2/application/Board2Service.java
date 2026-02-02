@@ -16,20 +16,20 @@ public class Board2Service {
 
     private final Board2Mapper board2Mapper;
 
-    public int postBoard(Board2PostReq req){
+    public int postBoard2(Board2PostReq req){
        return board2Mapper.save(req);
     }
-    public List<Board2GetRes> getBoardList(){
+    public List<Board2GetRes> getBoard2List(){
         return board2Mapper.findAll();
 
     }
-    public Board2GetOneRes getBoardOne(int id){
+    public Board2GetOneRes getBoard2One(int id){
         return board2Mapper.findById(id);
     }
-    public  int putBoard(Board2PutReq req){
+    public  int putBoard2(Board2PutReq req){
         return board2Mapper.update(req);
     }
-    public  int delBoard(int id){
+    public  int delBoard2(int id){
         return board2Mapper.delete(id);
     }
 }

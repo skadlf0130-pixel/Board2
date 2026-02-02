@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.green.board.application.BoardMapper">
+<mapper namespace="com.green.board2.application.Board2Mapper">
     <insert id="save">
         INSERT INTO board2
-        SET title = #{title}
+        SET title = #{title},
+            contents = #{contents}
+
     </insert>
     <select id="findAll">
         SELECT id, title, createdAt
@@ -12,12 +14,20 @@
     </select>
 
     <select id="findById">
-        SELECT id, title, createdAt
+        SELECT id, title, contents, createdAt
         FROM board2
         WHERE id = #{id}
     </select>
 
+    <update id="update">
+        UPDATE board2
+            SET title = #{title}
+            , contents = #{contents}
+        WHERE id = #{id}
+    </update>
 
-
+    <delete id="delete">
+        DELETE FROM board2 WHERE id = #{id}
+    </delete>
 
 </mapper>
